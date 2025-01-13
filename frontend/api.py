@@ -15,17 +15,7 @@ def api_music():
 	print(req['songs'])
 
 
-	app.model = pickle.load(open("./ml_rules/model_rules.pkl", "rb"))
-
-	x = os.path.getmtime("./ml_rules/model_rules.pkl")
-    if x != app.last_modified == pickle.load:
-        app.model = pickle.load(open("./ml_rules/model_rules.pkl", "rb"))
-        app.last_modified = os.path.getmtime("./ml_rules/model_rules.pkl")
-
 	playlist_ = ['Song 1', 'Song 2', 'Song 3']
-
-
-	
 	return jsonify({'songs': playlist_, 'version': 1, 'model_date': "date"})
 
 if __name__ == '__main__':
