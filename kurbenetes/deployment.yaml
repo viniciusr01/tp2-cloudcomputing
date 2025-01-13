@@ -18,8 +18,12 @@ spec:
         ports:
         - containerPort: 52061
         volumeMounts:
-        - mountPath: "/shared"
+        - mountPath: "/ml_rules/"
           name: rules-shared
+          env:
+        - name: url
+          value: "https://homepages.dcc.ufmg.br/~cunha/hosted/cloudcomp-2023s2-datasets/2023_spotify_ds1.csv"
+
       volumes:
       - name: rules-shared
         persistentVolumeClaim:
