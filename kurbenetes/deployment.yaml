@@ -18,10 +18,10 @@ spec:
         ports:
         - containerPort: 52061
         volumeMounts:
-        - mountPath: "/ml_rules/"
+        - mountPath: /ml_rules
           name: rules-shared
 
       volumes:
       - name: rules-shared
         persistentVolumeClaim:
-          claimName: project2-pv2
+          claimName: ml-rules

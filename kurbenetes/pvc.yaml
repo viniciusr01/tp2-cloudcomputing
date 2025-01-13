@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
- name: project2-pv2-viniciusoliveira
+ name: ml-rules
 spec:
  accessModes:
    - ReadWriteMany
- storageClassName: standard
+ storageClassName: default-storage-class-viniciusoliveira
  resources:
    requests:
      storage: 1Gi
