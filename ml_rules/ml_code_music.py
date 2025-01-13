@@ -3,14 +3,12 @@ import ssl
 from mlxtend.frequent_patterns import apriori
 from mlxtend.frequent_patterns import association_rules
 import pickle
-import os
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
 
-url = os.environ.get('url')
 
-df = pd.read_csv(url)
+df = pd.read_csv("https://homepages.dcc.ufmg.br/~cunha/hosted/cloudcomp-2023s2-datasets/2023_spotify_ds1.csv")
 
 basket = df.groupby(['pid', 'track_name'])['track_name'].count().unstack().fillna(0)
 

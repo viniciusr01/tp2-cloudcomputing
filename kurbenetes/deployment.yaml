@@ -14,17 +14,14 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: quay.io/viniciusr01/frontend-tp2-vinicius:0.1
+        image: quay.io/viniciusr01/frontend-tp2-vinicius:0.2
         ports:
         - containerPort: 52061
         volumeMounts:
         - mountPath: "/ml_rules/"
           name: rules-shared
-          env:
-        - name: url
-          value: "https://homepages.dcc.ufmg.br/~cunha/hosted/cloudcomp-2023s2-datasets/2023_spotify_ds1.csv"
 
       volumes:
       - name: rules-shared
         persistentVolumeClaim:
-          claimName: project2-pvc-viniciusoliveira
+          claimName: project2-pv2

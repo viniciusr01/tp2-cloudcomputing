@@ -1,0 +1,11 @@
+project: viniciusoliveira-project
+source:
+  repoURL: https://github.com/viniciusr01/tp2-cloudcomputing.git
+  path: kurbenetes
+  targetRevision: HEAD
+destination:
+  server: https://kubernetes.default.svc
+  namespace: viniciusoliveira
+syncPolicy:
+  automated:
+    selfHeal: true
