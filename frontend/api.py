@@ -59,7 +59,7 @@ def api_music():
     with open(pkl_, 'rb') as rules:
         music_rules = pickle.load(rules)
         
-    list_musics = playlist_recommender(["João", "Bohemian Rhapsody"], music_rules)
+    list_musics = playlist_recommender(req['songs'], music_rules)
 
     
     return jsonify({'songs': list_musics, 'version': 1, 'model_date': "date"})	
