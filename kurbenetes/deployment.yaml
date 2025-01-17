@@ -1,27 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: playlist-recommender-viniciusoliveira
+  name: frontend-viniciusoliveira
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: playlist-recommender-viniciusoliveira
+      app: frontend-viniciusoliveira
   template:
     metadata:
       labels:
-        app: playlist-recommender-viniciusoliveira
+        app: frontend-viniciusoliveira
     spec:
       containers:
       - name: frontend
         image: quay.io/viniciusr01/frontend-tp2-vinicius:0.2
+        imagePullPolicy: Always
         ports:
         - containerPort: 52061
-        volumeMounts:
-        - mountPath: /ml_rules
-          name: rules-shared
-
-      volumes:
-      - name: rules-shared
-        persistentVolumeClaim:
-          claimName: ml-rules

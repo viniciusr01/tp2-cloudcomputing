@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ml-rules-viniciusoliveira
+spec:
+  template:
+    spec:
+      containers:
+        - name: ml-rules-viniciusoliveira
+          image: quay.io/viniciusr01/ml_rules-tp2-vinicius:0.2 
+          volumeMounts:
+            - mountPath: /ml_rules
+              name: rules-shared
+      restartPolicy: Never
+      volumes:
+        - name: rules-shared
+          persistentVolumeClaim:
+            claimName: ml-rules
+  backoffLimit: 1
