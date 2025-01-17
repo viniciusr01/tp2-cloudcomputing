@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: quay.io/viniciusr01/frontend-tp2-vinicius:0.3
+        image: quay.io/viniciusr01/frontend-tp2-vinicius:0.4
         imagePullPolicy: Always
         ports:
         - containerPort: 52061
