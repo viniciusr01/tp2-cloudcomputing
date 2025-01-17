@@ -46,7 +46,7 @@ def playlist_recommender(musics, rules):
 
 @app.route("/")
 def hello():
-	return "API working!"
+	return "API working now!"
 
 
 @app.route('/api/recommend/', methods=["POST"])

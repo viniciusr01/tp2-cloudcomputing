@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: frontend-viniciusoliveira
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: frontend-viniciusoliveira
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: quay.io/viniciusr01/frontend-tp2-vinicius:0.2
+        image: quay.io/viniciusr01/frontend-tp2-vinicius:0.3
         imagePullPolicy: Always
         ports:
         - containerPort: 52061
