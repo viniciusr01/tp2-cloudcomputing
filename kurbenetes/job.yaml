@@ -7,7 +7,7 @@ spec:
     spec:
       containers:
         - name: ml-rules-viniciusoliveira
-          image: quay.io/viniciusr01/ml_rules-tp2-vinicius:0.1 
+          image: quay.io/viniciusr01/ml_rules-tp2-vinicius:0.2 
           volumeMounts:
             - mountPath: /ml_rules
               name: rules-shared
