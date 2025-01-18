@@ -54,7 +54,7 @@ def api_music():
     req = request.get_json(force=True)
     print(req['songs'])
     
-    pkl_ = './model_rules.pkl'
+    pkl_ = '../ml_rules/model_rules.pkl'
     
     with open(pkl_, 'rb') as rules:
         music_rules = pickle.load(rules)
